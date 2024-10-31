@@ -15,7 +15,10 @@ import {
 } from "react-router-dom";
 
 function Header() {
-  const [destination, setDestination] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [destination, setDestination] = useState(
+    searchParams.get("destination") || ""
+  );
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setoptions] = useState({
     adult: 1,
@@ -31,7 +34,6 @@ function Header() {
   ]);
   const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleOption = (name, operation) => {
     setoptions((prev) => {
