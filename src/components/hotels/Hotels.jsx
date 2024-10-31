@@ -10,12 +10,10 @@ function Hotels() {
 
   const { isLoading, data } = useFetch(
     "http://localhost:5000/hotels",
-    `host_location_like=${destination || ""} name_like=${
-      destination || ""
-    }&accommodates_get=${room || 1}`
+    `q=${destination || ""}&accommodates_gte=${room || 1}`
   );
   if (isLoading) <Loader />;
-  return <div>Hotels</div>;
+  return <div>{data.length}</div>;
 }
 
 export default Hotels;
