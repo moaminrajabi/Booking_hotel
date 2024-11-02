@@ -46,3 +46,7 @@ function ChangeCenter({ position }) {
   map.setView(position);
   return null;
 }
+
+function DetetClick(){
+  
+}

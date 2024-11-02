@@ -18,8 +18,8 @@ function App() {
         <Route path="/hotels" element={<AppLayout />}>
           <Route index element={<Hotels />} />
           <Route path=":id" element={<SingleHotel />} />
-          <Route />
         </Route>
+        <Route path="/bookmark" element={<div>BookMark</div>} />
       </Routes>
     </HotelProvider>
   );
