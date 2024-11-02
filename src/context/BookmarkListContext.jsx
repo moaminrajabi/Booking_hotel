@@ -11,12 +11,12 @@ function BookmarkListProvider({ children }) {
   const [isLoadingCurrentBookmark, setIsLoadingCurrentBookmark] =
     useState(false);
 
-  const { isLoading, data: bookmarks } = useFetch(`${BASE_URL}/bookmark`);
+  const { isLoading, data: bookmarks } = useFetch(`${BASE_URL}/bookmarks`);
 
   async function getBookmark(id) {
     isLoadingCurrentBookmark(true);
     try {
-      const { data } = await axios.get(`${BASE_URL}/bookmark/${id}`);
+      const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBokkmark(data);
       isLoadingCurrentBookmark(false);
     } catch (error) {
@@ -43,5 +43,5 @@ function BookmarkListProvider({ children }) {
 export default BookmarkListProvider;
 
 export function useBookmark() {
-  return useContext(HotelContext);
+  return useContext(BookmarkContext);
 }
