@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHotel } from "../../context/HotelProvider";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useSearchParams } from "react-router-dom";
+import useGeoLocation from "../../hooks/useGeoLocation";
 
 function Map() {
   const { isLoading, hotels } = useHotel();
@@ -10,9 +11,20 @@ function Map() {
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
 
+  const {
+    isLoading: isLoadingPosition,
+    position: getLocationPosition,
+    getPosition,
+  } = useGeoLocation();
+
   useEffect(() => {
     if ((lat, lng)) setMapCenter([lat, lng]);
   }, [lat, lng]);
+
+  useEffect(() => {
+    if (getLocationPosition?.lat && getLocationPosition?.lng)
+      setMapCenter([getLocationPosition.lat, getLocationPosition.lng]);
+  }, [getLocationPosition]);
 
   return (
     <div className="mapContainer">
@@ -22,6 +34,9 @@ function Map() {
         zoom={13}
         scrollWheelZoom={true}
       >
+        <button onClick={getPosition} className="getLocation">
+          {isLoadingPosition ? "Loading..." : "Use Your Location"}
+        </button>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
@@ -47,6 +62,4 @@ function ChangeCenter({ position }) {
   return null;
 }
 
-function DetetClick(){
-  
-}
+function DetetClick() {}
