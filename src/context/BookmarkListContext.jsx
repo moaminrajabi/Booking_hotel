@@ -14,14 +14,14 @@ function BookmarkListProvider({ children }) {
   const { isLoading, data: bookmarks } = useFetch(`${BASE_URL}/bookmarks`);
 
   async function getBookmark(id) {
-    isLoadingCurrentBookmark(true);
+    setIsLoadingCurrentBookmark(true);
     try {
       const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBokkmark(data);
-      isLoadingCurrentBookmark(false);
+      setIsLoadingCurrentBookmark(false);
     } catch (error) {
       toast.error(error.message);
-      isLoadingCurrentBookmark(false);
+      setIsLoadingCurrentBookmark(false);
     }
   }
 

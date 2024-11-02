@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Loader from "../Laader/Loader";
-
 import { useHotel } from "../../context/HotelProvider";
 import { useEffect } from "react";
 
