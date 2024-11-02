@@ -281,8 +281,8 @@
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
-  /* align-items: center;
-  justify-content: space-between; */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .bookmarkList .bookmarkItem.current-bookmark {
