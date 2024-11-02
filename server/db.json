@@ -1368,6 +1368,24 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Bordj Badji Mokhtar",
+      "country": "Algeria",
+      "countryCode": "DZ",
+      "latitude": "21.415997691959365",
+      "longitude": "1.1865234375000002",
+      "host_location": "Bordj Badji Mokhtar Algeria",
+      "id": 9
+    },
+    {
+      "cityName": "Vaga",
+      "country": "Norway",
+      "countryCode": "NO",
+      "latitude": "61.62206526043813",
+      "longitude": "8.964843750000002",
+      "host_location": "Vaga Norway",
+      "id": 10
     }
   ]
 }
