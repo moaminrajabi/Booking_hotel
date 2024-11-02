@@ -12,15 +12,17 @@ function BookMark() {
   return (
     <div>
       <h2>Bookmark List</h2>
-
       <div className="bookmarkList">
         {bookmarks.map((item) => {
           return (
-            <Link to={`${item.id}?lat=${item.latitude}?lan=${item.longitude}`}>
+            <Link
+              key={item.id}
+              to={`${item.id}?lat=${item.latitude}?lan=${item.longitude}`}
+            >
               <div key={item.id} className="bookmarkItem">
                 <ReactCountryFlag svg countryCode={item.countryCode} /> &nbsp;
                 <strong> {item.cityName} </strong> &nbsp;
-                <span> {item.country} </span>
+                <span>{item.country}</span>
               </div>
             </Link>
           );

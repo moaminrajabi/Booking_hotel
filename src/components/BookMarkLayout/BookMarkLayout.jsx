@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Map from "../Map/Map";
 import { Outlet } from "react-router-dom";
 import { useBookmark } from "../../context/BookmarkListContext";
