@@ -204,6 +204,19 @@
   color: #fff;
   z-index: 1000;
 }
+.bttn {
+  padding: .5rem 1.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  /* position: absolute; */
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--primary-600);
+  /* box-shadow: 0 0 10px var(--primary-600); */
+  color: #fff;
+  z-index: 1000;
+}
 .map {
   height: 100%;
 }
